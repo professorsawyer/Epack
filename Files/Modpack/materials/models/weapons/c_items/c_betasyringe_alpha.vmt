@@ -1,0 +1,39 @@
+"VertexlitGeneric"
+{
+	"$baseTexture" "models/weapons/c_items/c_betasyringe_alpha"
+	"$additive"	1
+	"$surfaceprop" "glass"
+
+	"$envmap" "env_cubemap"
+	"$envmaptint" "[.3 .3 .2]"
+
+	"$phong" "1"
+	"$phongexponent" "65"
+	"$phongfresnelranges" "[1 2 4]"
+	"$phongboost" "2"
+
+	"$glowcolor" "1"
+
+	// Cloaking
+	"$cloakPassEnabled" "1"
+	"Proxies"
+	{
+		"weapon_invis"
+		{
+		}
+		"ModelGlowColor"
+		{
+			"resultVar" "$glowcolor"
+		}
+		"Equals"
+		{
+			"srcVar1"  "$glowcolor"
+			"resultVar" "$selfillumtint"
+		}
+		"Equals"
+		{
+			"srcVar1"  "$glowcolor"
+			"resultVar" "$color2"
+		}
+	}
+}
